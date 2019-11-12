@@ -2,6 +2,8 @@
   hosts: all
   become: yes
   gather_facts: yes
+  vars:
+    apache_test_message: "THIS IS AN APACHE WEB SERVICE"
   tasks:
   - name: "Install httpd Apache web server"
     yum:
