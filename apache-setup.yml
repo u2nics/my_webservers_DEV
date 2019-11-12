@@ -1,0 +1,17 @@
+- name: "Play to Install, Configure and Intiailize content on Apache web server"
+  hosts: webservers
+  gather_facts: no
+  tasks:
+  - name: "Install httpd Apache web server"
+    yum:
+      name: httpd
+      state: latest
+  - name: "Setup the content"
+    template:
+      src: templates/index.html.j2
+      dest: /var/www/html/index.html
+  - name: "Enable and start Service"
+    service:
+      name: httpd
+      state: started
+      enabled: yes
