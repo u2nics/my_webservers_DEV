@@ -1,5 +1,6 @@
 - name: "Play to Install, Configure and Intiailize content on Apache web server"
   hosts: all
+  become: yes
   gather_facts: yes
   tasks:
   - name: "Install httpd Apache web server"
