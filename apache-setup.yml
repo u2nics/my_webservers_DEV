@@ -1,6 +1,6 @@
 - name: "Play to Install, Configure and Intiailize content on Apache web server"
   hosts: webservers
-  gather_facts: no
+  gather_facts: yes
   tasks:
   - name: "Install httpd Apache web server"
     yum:
